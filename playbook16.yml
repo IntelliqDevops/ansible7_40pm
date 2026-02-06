@@ -1,0 +1,13 @@
+---
+- name: Implementing loops
+  hosts: all
+  tasks:
+    - name: Install s/w app's
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop:
+        - openjdk-17-jdk
+        - maven
+        - tree
