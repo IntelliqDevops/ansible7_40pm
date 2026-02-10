@@ -1,0 +1,22 @@
+---
+- name: Implementing tags
+  hosts: all
+  tasks:
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+      tags:
+        - apache
+        - install
+        - always
+    - name: Install tomcat
+      apt:
+        name: tomcat10
+        state: present
+        update_cache: yes
+      tags:
+        - tomcat
+        - install
+        - never
