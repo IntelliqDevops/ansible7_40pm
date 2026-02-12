@@ -1,0 +1,7 @@
+---
+- name: Call child playbooks
+  hosts: all
+  tasks:
+    - name: Call childplaybook for copying the passwd file
+      include_tasks: playbook33.yml
+...
